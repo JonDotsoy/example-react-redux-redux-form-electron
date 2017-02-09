@@ -1,0 +1,21 @@
+{
+  "name": "test-react-form",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon --exec \"electron mainelectron.js\""
+  },
+  "author": "Jonathan Delgado <hi@jon.soy>",
+  "devDependencies": {
+    "electron": "^1.4.15",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-form": "^6.5.0"
+  }
+}
