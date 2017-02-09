@@ -1,10 +1,10 @@
 {
   "name": "test-react-form",
   "private": true,
-  "main": "index.js",
   "scripts": {
     "test1": "nodemon --exec \"electron test1/mainElectron.js\"",
-    "test2": "nodemon --exec \"electron test2/mainElectron.js\""
+    "test2": "nodemon --exec \"electron test2/mainElectron.js\"",
+    "test3": "nodemon --exec \"electron test3/mainElectron.js\""
   },
   "author": "Jonathan Delgado <hi@jon.soy>",
   "devDependencies": {
