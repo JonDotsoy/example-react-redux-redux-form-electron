@@ -1,5 +1,5 @@
 const {Component, createElement: e, DOM: {div, button, form, label, ul, span, li, input, h1, h2}} = require('react')
-const {MyCustomField} = require('./MyCustomField')
+const get = require('lodash/get')
 const {render} = require('react-dom')
 const {createStore} = require('redux')
 const {connect, Provider, getFormValues} = require('react-redux')
@@ -67,50 +67,18 @@ const MyAPP = e(Provider, {store},
     span({},
       e(MyFormDecorated, {
         handleSubmit: (values) => {
+          const firstName = get(store.getState(), ['form', 'myform', 'values', 'firstName'])
+          const lastName = get(store.getState(), ['form', 'myform', 'values', 'lastName'])
           // ƪ(˘⌣˘)ʃ
           console.warn('load store.getState()')
-          console.log(store.getState())
+          console.info('firstName: %o, lastName: %o', firstName, lastName)
         }
       })
     )
   )
 )
 
-/* Example 2
-Using a custom Field
-*/
-const MyCustomFieldDecorated = reduxForm({
- form: 'myForm2'
-})(
-  connect(
-    state => ({
-      values: require('redux-form').getFormValues('myForm2')(state)
-    })
-  )(MyCustomField)
-)
-
-const MyAPP2 = e(Provider, {store},
-  div({},
-    span({}, 
-      e(MyCustomFieldDecorated)
-    )
-  )
-)
-
-
-/**
-* ┬─┬ノ( º _ ºノ)
-* Important! Is not possible use an element with Field, without Redux.
-*/
-const WithOutProvider = e(MyForm, {
-  handleSubmit: (values) => {
-          // ƪ(˘⌣˘)ʃ
-    console.warn('load store.getState()')
-    console.log(store.getState())
-  }
-})
-
 // ┬┴┬┴┤ ͜ʖ ͡°) ├┬┴┬┴ this is to render
 const selectorAPP = document.querySelector('#app')
-render(MyAPP2, selectorAPP)
+render(MyAPP, selectorAPP)
 

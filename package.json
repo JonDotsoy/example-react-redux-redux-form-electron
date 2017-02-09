@@ -3,7 +3,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "watch": "nodemon --exec \"electron mainelectron.js\""
+    "test1": "nodemon --exec \"electron test1/mainElectron.js\"",
+    "test2": "nodemon --exec \"electron test2/mainElectron.js\""
   },
   "author": "Jonathan Delgado <hi@jon.soy>",
   "devDependencies": {
