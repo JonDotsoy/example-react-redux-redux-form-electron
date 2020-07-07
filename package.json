@@ -8,7 +8,7 @@
   },
   "author": "Jonathan Delgado <hi@jon.soy>",
   "devDependencies": {
-    "electron": "^1.4.15",
+    "electron": "^9.1.0",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
